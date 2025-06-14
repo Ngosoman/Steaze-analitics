@@ -6,3 +6,5 @@ setTimeout(() => {
   // Optional: remove from DOM after fade
   setTimeout(() => splash.remove(), 1000);
 }, 3000); // 3 seconds
+
+ 
