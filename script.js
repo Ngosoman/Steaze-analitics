@@ -15,7 +15,7 @@ setTimeout(() => {
       const message = document.getElementById("message").value;
 
       const phoneNumber = "254706867627";
-      const whatsappMessage = `Hello Steaze Analytics,%0AMy name is *${name}*.%0AMy email is *${email}*.%0AMessage: *${message}*`;
+      const whatsappMessage = `Hello Steaze Analytics,%0A*My name:* ${name}%0A*My email:* ${email}%0A*Message:* ${message}`;
 
       const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
       window.open(whatsappURL, "_blank");
