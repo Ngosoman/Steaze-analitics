@@ -74,8 +74,6 @@ body {
   z-index: 999;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: auto;
-  z-index: 1001;       /* Ensure it's above nav-links */
-  position: relative;
 }
 
 
