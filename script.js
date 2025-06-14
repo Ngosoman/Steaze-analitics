@@ -7,4 +7,16 @@ setTimeout(() => {
   setTimeout(() => splash.remove(), 1000);
 }, 3000); // 3 seconds
 
- 
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      const phoneNumber = "254706867627";
+      const whatsappMessage = `Hello Steaze Analytics,%0AMy name is ${name}.%0AMy email is ${email}.%0AMessage: ${message}`;
+
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+      window.open(whatsappURL, "_blank");
+    });
