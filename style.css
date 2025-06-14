@@ -74,6 +74,8 @@ body {
   z-index: 999;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: auto;
+  z-index: 1001;       /* Ensure it's above nav-links */
+  position: relative;
 }
 
 
@@ -249,14 +251,23 @@ body {
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 2px;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
 }
 .hamburger span {
+  display: block;
   height: 3px;
-  width: 25px;
+  width: 100%;
   background-color: white;
-  margin: 4px 0;
   border-radius: 2px;
+  transition: 0.3s ease;
 }
 
 /* Default nav-links visible in desktop */
@@ -268,25 +279,61 @@ body {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
   .nav-links {
     flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
+    height: 30%;
+    width: 100%;
+    margin-top: 60px;
+    background-color: #1a1a1a;
     display: none;
-    padding: 1rem 0;
     text-align: center;
+    justify-content: center;  /* center nav items vertically */
+    align-items: center;
+    z-index: 1000;
+    gap: 2px;
   }
+ .hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;        
+  border: none;            
+  padding: 0;              
+  
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background-color: white;  /* ✅ lines color */
+  border-radius: 2px;
+  transition: 0.4s ease;
+  display: block;
+}
 
   .menu-toggle:checked + .hamburger + .nav-links {
     display: flex;
   }
+
+  /* Animate hamburger into X */
+  .menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
 
   .nav-links li a {
     color: white;
@@ -305,8 +352,5 @@ body {
     justify-content: space-between;
     background-color: #0e3c2e; /* Dark green */
     padding: 1rem 2rem;
-     /* position: sticky;
-     top: 0;
-     z-index: 999; */
   }
-}
+
