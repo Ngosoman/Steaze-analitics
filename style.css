@@ -354,3 +354,43 @@ body {
     padding: 1rem 2rem;
   }
 
+/* About Us */
+.about {
+  background-color: var(--dark-green);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content h1 {
+  color: var(--blue); /* e.g. #004d40 */
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-content h2 {
+  color: var(--blue); /* e.g. #0066cc */
+  margin-top: 40px;
+}
+
+.about-content p,
+.about-content ul {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.about-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-content li::before {
+  content: "✔️ ";
+  color: var(--blue);
+}
