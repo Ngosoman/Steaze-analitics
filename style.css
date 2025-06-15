@@ -394,3 +394,8 @@ body {
   content: "✔️ ";
   color: var(--blue);
 }
+.active {
+   color: var(--blue); /* or any color you want */
+  font-weight: bold;
+  border-bottom: 2px solid var(--blue);
+}
