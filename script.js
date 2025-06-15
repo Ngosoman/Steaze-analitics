@@ -10,13 +10,13 @@ setTimeout(() => {
   document.getElementById("contact-form").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+      const name = encodeURIComponent(`*${document.getElementById("name").value}*`);
+      const email = encodeURIComponent(`*${document.getElementById("email").value}*`);
+      const message = encodeURIComponent(`*${document.getElementById("message").value}*`);
 
-      const phoneNumber = "254706867627";
-      const whatsappMessage = `Hello Steaze Analytics,%0A*My name:* ${name}%0A*My email:* ${email}%0A*Message:* ${message}`;
+const whatsappMessage = `Hello Steaze Analytics,%0AMy name: ${name}%0AMy email: ${email}%0AMessage: ${message}`;
+const whatsappURL = `https://wa.me/254706867627?text=${whatsappMessage}`;
 
-      const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
-      window.open(whatsappURL, "_blank");
+window.open(whatsappURL, "_blank");
+
     });
