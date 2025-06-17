@@ -345,6 +345,10 @@ body {
   .logo {
     flex: 1;
   }
+  .logo:hover{
+     color: var(--blue);
+     transform: scale(0.99);
+  }
 
   .navbar {
     display: flex;
